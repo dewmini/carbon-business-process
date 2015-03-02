@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+http://www.w3.org/XML/1998/namespace<?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://docs.oasis-open.org/ns/bpel4people/ws-humantask/types/200803" attributeFormDefault="unqualified" blockDefault="#all" elementFormDefault="qualified" targetNamespace="http://docs.oasis-open.org/ns/bpel4people/ws-humantask/types/200803">
     <xsd:annotation>
         <xsd:documentation>

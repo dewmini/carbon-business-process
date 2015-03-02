@@ -22,6 +22,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.juddi.v3.error.RegistryException;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.wso2.carbon.context.CarbonContext;

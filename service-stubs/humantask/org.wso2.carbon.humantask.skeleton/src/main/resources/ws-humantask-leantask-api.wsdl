@@ -89,7 +89,7 @@
             <xsd:element name="inputMessage">
               <xsd:complexType>
                 <xsd:sequence>
-                  <xsd:any processContents="lax" namespace="##any" />
+                  <xsd:any processContents="lax" namespace="##other" />
                 </xsd:sequence>
               </xsd:complexType>
             </xsd:element>
@@ -98,13 +98,14 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+
       <xsd:element name="createLeanTaskResponse">
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name="outputMessage">
               <xsd:complexType>
                 <xsd:sequence>
-                  <xsd:any processContents="lax" namespace="##any" />
+                  <xsd:any processContents="lax" namespace="##other" />
                 </xsd:sequence>
               </xsd:complexType>
             </xsd:element>
@@ -118,7 +119,7 @@
             <xsd:element name="inputMessage">
               <xsd:complexType>
                 <xsd:sequence>
-                  <xsd:any processContents="lax" namespace="##any" />
+                  <xsd:any processContents="lax" namespace="##other" />
                 </xsd:sequence>
               </xsd:complexType>
             </xsd:element>
@@ -144,7 +145,7 @@
             <xsd:element name="outputMessage">
               <xsd:complexType>
                 <xsd:sequence>
-                  <xsd:any processContents="lax" namespace="##any" />
+                  <xsd:any processContents="lax" namespace="##other" />
                 </xsd:sequence>
               </xsd:complexType>
             </xsd:element>
@@ -267,113 +268,4 @@
 
   </wsdl:portType>
 
-    <wsdl:binding name="leantaskOperationsSOAP" type="leanTaskOperations">
-        <soap:binding style="document"
-                      transport="http://schemas.xmlsoap.org/soap/http" />
-        <wsdl:operation name="registerLeanTaskDefinition">
-            <soap:operation
-                    soapAction="http://docs.oasis-open.org/ns/bpel4people/ws-humantask/leantask/api/200803/registerLeanTaskDefinition" />
-            <wsdl:input>
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body use="literal"/>
-            </wsdl:output>
-            <wsdl:fault name="illegalStateFault">
-                <soap:fault use="literal" name="illegalStateFault"/>
-            </wsdl:fault>
-            <wsdl:fault name="illegalAccessFault">
-                <soap:fault use="literal" name="illegalAccessFault"/>
-            </wsdl:fault>
-        </wsdl:operation>
-
-        <wsdl:operation name="unregisterLeanTaskDefinition">
-            <soap:operation
-                    soapAction="http://docs.oasis-open.org/ns/bpel4people/ws-humantask/leantask/api/200803/unregisterLeanTaskDefinition" />
-            <wsdl:input>
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body use="literal"/>
-            </wsdl:output>
-            <wsdl:fault name="illegalArgumentFault">
-                <soap:fault use="literal" name="illegalArgumentFault"/>
-            </wsdl:fault>
-            <wsdl:fault name="illegalAccessFault">
-                <soap:fault use="literal" name="illegalAccessFault"/>
-            </wsdl:fault>
-        </wsdl:operation>
-
-        <wsdl:operation name="listLeanTaskDefinitions">
-            <soap:operation
-                    soapAction="http://docs.oasis-open.org/ns/bpel4people/ws-humantask/leantask/api/200803/listLeanTaskDefinitions" />
-            <wsdl:input>
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body use="literal"/>
-            </wsdl:output>
-            <wsdl:fault name="illegalAccessFault">
-                <soap:fault use="literal" name="illegalAccessFault"/>
-            </wsdl:fault>
-        </wsdl:operation>
-
-        <wsdl:operation name="createLeanTask">
-            <soap:operation
-                    soapAction="http://docs.oasis-open.org/ns/bpel4people/ws-humantask/leantask/api/200803/createLeanTask" />
-            <wsdl:input>
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body use="literal"/>
-            </wsdl:output>
-            <wsdl:fault name="illegalArgumentFault">
-                <soap:fault use="literal" name="illegalArgumentFault"/>
-            </wsdl:fault>
-            <wsdl:fault name="illegalAccessFault">
-                <soap:fault use="literal" name="illegalAccessFault"/>
-            </wsdl:fault>
-        </wsdl:operation>
-
-        <wsdl:operation name="createLeanTaskAsync">
-            <soap:operation
-                    soapAction="http://docs.oasis-open.org/ns/bpel4people/ws-humantask/leantask/api/200803/createLeanTaskAsync" />
-            <wsdl:input>
-                <soap:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output>
-                <soap:body use="literal"/>
-            </wsdl:output>
-            <wsdl:fault name="illegalArgumentFault">
-                <soap:fault use="literal" name="illegalArgumentFault"/>
-            </wsdl:fault>
-            <wsdl:fault name="illegalAccessFault">
-                <soap:fault use="literal" name="illegalAccessFault"/>
-            </wsdl:fault>
-        </wsdl:operation>
-    </wsdl:binding>
-
-    <wsdl:binding name="leanTaskCallbackOperationsSOAP" type="leanTaskCallbackOperations">
-        <soap:binding style="document"
-                      transport="http://schemas.xmlsoap.org/soap/http" />
-        <wsdl:operation name="createLeanTaskAsyncCallback">
-            <soap:operation
-                    soapAction="http://docs.oasis-open.org/ns/bpel4people/ws-humantask/leantask/api/200803/createLeanTaskAsyncCallback" />
-            <wsdl:input>
-                <soap:body use="literal"/>
-            </wsdl:input>
-        </wsdl:operation>
-    </wsdl:binding>
-
-    <wsdl:service name="leanTaskService">
-        <wsdl:port binding="leantaskOperationsSOAP" name="leantaskOperationsPort">
-            <soap:address location="http://www.example.org/LeanTaskService"/>
-        </wsdl:port>
-    </wsdl:service>
-
-    <wsdl:service name="leanTaskCBService">
-        <wsdl:port binding="leanTaskCallbackOperationsSOAP" name="leanTaskCallbackOperationsPort">
-            <soap:address location="http://www.example.org/LeanTaskCBService" />
-        </wsdl:port>
-    </wsdl:service>
 </wsdl:definitions>
